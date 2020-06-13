@@ -89,7 +89,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Log.d(TAG, "onClick: hmm");
-                                    if (Utils.removeFromAlreadyRead(books.get(position))) {
+                                    if (Utils.getInstance(mContext).removeFromAlreadyRead(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -121,7 +121,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if (Utils.removeFromCurrentlyReading(books.get(position))) {
+                                    if (Utils.getInstance(mContext).removeFromCurrentlyReading(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -152,7 +152,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if (Utils.removeFromWishlist(books.get(position))) {
+                                    if (Utils.getInstance(mContext).removeFromWishlist(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -183,7 +183,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if (Utils.removeFromFavourites(books.get(position))) {
+                                    if (Utils.getInstance(mContext).removeFromFavourites(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {

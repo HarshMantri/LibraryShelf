@@ -1,11 +1,11 @@
 package com.wizardSphinx.libraryshelf;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
 
 public class WishlistActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class WishlistActivity extends AppCompatActivity {
         wishlistRecyclerView.setAdapter(adapter);
         wishlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.setBooks(Utils.getWishlistBooks());
+        adapter.setBooks(Utils.getInstance(this).getWishlistBooks());
     }
 
     @Override

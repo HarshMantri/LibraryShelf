@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initViews();
 
-        Utils.getInstance();
+        Utils.getInstance(this);
     }
 
     private void initViews() {

@@ -1,11 +1,10 @@
 package com.wizardSphinx.libraryshelf;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import java.util.ArrayList;
 
@@ -26,7 +25,7 @@ public class AllBooksActivity extends AppCompatActivity {
         allBooksRecView.setAdapter(adapter);
         allBooksRecView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.setBooks(Utils.getInstance().getAllBooks());
+        adapter.setBooks(Utils.getInstance(this).getAllBooks());
 
     }
 }
