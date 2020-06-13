@@ -15,35 +15,36 @@ public class Utils {
     private static ArrayList<Book> favouriteBooks;
 
     private Utils() {
-        if(allBooks == null) {
+        if (allBooks == null) {
             allBooks = new ArrayList<>();
             initData();
         }
 
-        if(alreadyReadBooks == null) {
+        if (alreadyReadBooks == null) {
             alreadyReadBooks = new ArrayList<>();
         }
 
-        if(currentlyReadingBooks == null) {
+        if (currentlyReadingBooks == null) {
             currentlyReadingBooks = new ArrayList<>();
         }
 
-        if(wishlistBooks == null) {
+        if (wishlistBooks == null) {
             wishlistBooks = new ArrayList<>();
         }
 
-        if(favouriteBooks == null) {
+        if (favouriteBooks == null) {
             favouriteBooks = new ArrayList<>();
         }
     }
 
     private void initData() {
-        allBooks.add(new Book(1, "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 223, "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg","A masterclass of a wizarding world", "Long Description"));
+        //TODO remove the hardcoded books and give user option to add books to their library
+        allBooks.add(new Book(1, "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 223, "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg", "A masterclass of a wizarding world", "Long Description"));
         allBooks.add(new Book(2, "Harry Potter and the Chamber of Secrets", "J.K. Rowling", 251, "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg", "Wow!", ""));
     }
 
     public static Utils getInstance() {
-        if(instance != null) {
+        if (instance != null) {
             return instance;
         } else {
             instance = new Utils();
@@ -72,8 +73,8 @@ public class Utils {
     }
 
     public static Book getBookById(int id) {
-        for(Book b: allBooks) {
-            if(b.getId() == id) {
+        for (Book b : allBooks) {
+            if (b.getId() == id) {
                 return b;
             }
         }

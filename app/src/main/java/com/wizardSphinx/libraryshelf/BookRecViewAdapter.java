@@ -3,7 +3,6 @@ package com.wizardSphinx.libraryshelf;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,7 +66,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         holder.shortDesc.setText(books.get(position).getShortDescription());
         holder.authorName.setText(books.get(position).getAuthor());
 
-        if(books.get(position).getExtended()) {
+        if (books.get(position).getExtended()) {
             Log.d(TAG, "GetExtended True");
             TransitionManager.beginDelayedTransition(holder.parent);
             holder.extendedRelativeLayout.setVisibility(View.VISIBLE);
@@ -78,7 +77,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                     holder.deleteBtn.setVisibility(View.GONE);
                     break;
                 case "alreadyRead":
-                    Log.d(TAG, "hehe");
+                    Log.d(TAG, "in already read expanded");
                     holder.deleteBtn.setVisibility(View.VISIBLE);
                     holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -90,7 +89,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Log.d(TAG, "onClick: hmm");
-                                    if(Utils.removeFromAlreadyRead(books.get(position))) {
+                                    if (Utils.removeFromAlreadyRead(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -122,7 +121,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if(Utils.removeFromCurrentlyReading(books.get(position))) {
+                                    if (Utils.removeFromCurrentlyReading(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -153,7 +152,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if(Utils.removeFromWishlist(books.get(position))) {
+                                    if (Utils.removeFromWishlist(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {
@@ -184,7 +183,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if(Utils.removeFromFavourites(books.get(position))) {
+                                    if (Utils.removeFromFavourites(books.get(position))) {
                                         Toast.makeText(mContext, "book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
                                     } else {

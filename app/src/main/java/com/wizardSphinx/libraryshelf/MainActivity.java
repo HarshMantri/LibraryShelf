@@ -1,16 +1,15 @@
 package com.wizardSphinx.libraryshelf;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button allBooksBtn, curReadingBtn, alreadyReadBtn, wishlistBtn, favouritesBtn, abtBtn;
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.main_all_books_btn:
                 //Toast.makeText(this, "All Books Selected", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AllBooksActivity.class);
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(this, "About Button Selected", Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(getString(R.string.app_name));
-                builder.setMessage("This is a basic app for all your book shelf organisational needs."+
+                builder.setMessage("This is a basic app for all your book shelf organisational needs." +
                         " You can manage your books by adding to various lists as needed. \nThis app was made with love by Harsh Mantri");
                 builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                     @Override
