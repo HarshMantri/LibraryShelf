@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Library Shelf</string>
+    <string name="activity_all_books">All Books</string>
+    <string name="activity_already_read">Already Read</string>
+    <string name="activity_cur_reading">Currently Reading</string>
+    <string name="activity_wishlist">Want To Read</string>
+    <string name="activity_fav">Favourites</string>
+    <string name="activity_book_details">Book Details</string>
+</resources>
